@@ -95,7 +95,7 @@ class NoticiaController extends Controller
     // Approve or reject a news
     public function review($id, Request $request) {
         $foundNews = Noticia::find($id);
-        $validatedStatus = $request->validate(['estatus' => 'required|in:1,2']);
+        $validatedStatus = $request->validate(['estatus' => 'required|in:0,1,2']);
 
         $foundNews->estatus = $validatedStatus['estatus'];
         $foundNews->save();
