@@ -10,21 +10,22 @@ y escalable a futuro.
 - [x] Xampp o Laragon
 - [x] Composer
 
-2. El proyecto vendrá sin los módulos encargados de que funcione correctamente, similar a los `node_modules` de Node.js, ubícate 
+2. Clonar el proyecto en la carpeta `htdocs` (si usas xampp) o en la carpeta `www` (si usas laragon).
+3. El proyecto vendrá sin los módulos encargados de que funcione correctamente, similar a los `node_modules` de Node.js, ubícate 
 en el directorio raíz del proyecto y luego instala los módulos con los siguientes comandos:
 ```BASH
 composer install
 composer require doctrine/dbal
 ```
 
-3. Encender el servidor `Apache` y `MySQL` como si fueses a trabajar con un proyecto de PHP convencional.
-4. Crear una base de datos con el nombre `news_feed`, dicho nombre puede ser modificado en el archivo `.env`.
-5. La base de datos estará vacía después de creada, para agregarle las tablas y `seeders`, debes ejecutar los siguientes comandos:
+4. Encender el servidor `Apache` y `MySQL` como si fueses a trabajar con un proyecto de PHP convencional.
+5. Crear una base de datos con el nombre `news_feed`, dicho nombre puede ser modificado en el archivo `.env`.
+6. La base de datos estará vacía después de creada, para agregarle las tablas y `seeders`, debes ejecutar los siguientes comandos:
 ```BASH
 php artisan migrate
 php artisan db:seed
 ```
-6. Refresca la página o recarga la aplicación que esté manejando la base de datos, verás como se habrá llenado con sus respectivas tablas y datos de prueba.
+7. Refresca la página o recarga la aplicación que esté manejando la base de datos, verás como se habrá llenado con sus respectivas tablas y datos de prueba.
 
 >[!NOTE]
 > Si solo necesitas subir las tablas sin datos de prueba, ejecuta el siguiente comando:
@@ -33,7 +34,7 @@ php artisan db:seed
 php artisan migrate
 ```
 
-7. Una vez rellenada la base de datos con sus tablas y/o datos de prueba, la API está lista para ejecutarse con el siguiente comando:
+8. Una vez rellenada la base de datos con sus tablas y/o datos de prueba, la API está lista para ejecutarse con el siguiente comando:
 ```BASH
 php artisan serve
 ```
