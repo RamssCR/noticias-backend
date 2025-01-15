@@ -19,8 +19,8 @@ class NoticiaFactory extends Factory
     public function definition(): array
     {
         return [
-            'titulo' => $this->faker->sentence(3),
-            'descripcion' => $this->faker->sentence(4),
+            'titulo' => $this->faker->sentence(5),
+            'descripcion' => $this->faker->sentence(6),
             'contenido' => $this->faker->sentence(11),
             'autor' => $this->faker->randomElement(['Fabian Scott', 'Henry Tyrell', 'Margary Quinn', 'Josie Pourle', 'Javier Oviedo']),
             'fecha_publicacion' => '01/01/2025',
