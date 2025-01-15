@@ -11,9 +11,10 @@ y escalable a futuro.
 - [x] Composer
 
 2. El proyecto vendrá sin los módulos encargados de que funcione correctamente, similar a los `node_modules` de Node.js, ubícate 
-en el directorio raíz del proyecto y luego instala los módulos con el siguiente comando:
+en el directorio raíz del proyecto y luego instala los módulos con los siguientes comandos:
 ```BASH
 composer install
+composer require doctrine/dbal
 ```
 
 3. Encender el servidor `Apache` y `MySQL` como si fueses a trabajar con un proyecto de PHP convencional.
@@ -35,4 +36,10 @@ php artisan migrate
 7. Una vez rellenada la base de datos con sus tablas y/o datos de prueba, la API está lista para ejecutarse con el siguiente comando:
 ```BASH
 php artisan serve
+```
+
+> [!NOTE]
+> Si las imágenes no se logran mostrar en el frontend, en el directorio raíz del proyecto, ejecuta el siguiente comando:
+```BASH
+php artisan storage:link
 ```
