@@ -27,18 +27,7 @@ class NoticiaController extends Controller
     }
 
     // Create a news
-    public function create(Request $request) {
-        if ($request->hasFile('multimedia')) {
-            $file = $request->file('multimedia');
-            Log::info('file', [
-                'name' => $file->getClientOriginalName(), 
-                'type' => $file->getMimeType(), 
-                'size' => $file->getSize()
-            ]);
-        } else {
-            Log::info('No se recibió ningún archivo');
-        }
-        
+    public function create(Request $request) {       
         $validatedRequest = $request->validate([
             'titulo' => 'required|string|max:150',
             'descripcion' => 'required|string|max:80',
@@ -50,6 +39,7 @@ class NoticiaController extends Controller
             'id_etiqueta' => 'required|exists:etiquetas,id_etiqueta',
             'id_usuario' => 'required|exists:users,id'
         ]);
+        
 
         $path = $request->file('multimedia')->store('multimedia', 'public');
 
@@ -78,7 +68,6 @@ class NoticiaController extends Controller
             'contenido' => 'sometimes',
             'autor' => 'sometimes|string|max:45',
             'fecha_publicacion' => 'sometimes|string|max:45',
-            'multimedia' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048',
             'id_categoria' => 'sometimes|exists:categorias,id_categoria',
             'id_etiqueta' => 'sometimes|exists:etiquetas,id_etiqueta',
         ]);
