@@ -13,13 +13,20 @@ return new class extends Migration
     {
         Schema::create('noticias', function (Blueprint $table) {
             $table->id('id_noticias');
-            $table->string('titulo', 150);
-            $table->string('descripcion', 45);
+            $table->string('titulo', 75);
+            $table->string('descripcion', 250);
+            $table->string('introduccion', 250);
             $table->longText('contenido');
+            $table->longText('nudo');
+            $table->longText('desenlace');
             $table->string('autor', 45);
+            $table->longText('referencia');
             $table->string('fecha_publicacion', 45);
             $table->tinyInteger('estatus')->default(0);
             $table->string('multimedia');
+            $table->string('multimedia_introduccion', 250)->nullable();
+            $table->string('multimedia_nudo', 250)->nullable();
+            $table->string('multimedia_desenlace', 250)->nullable();
             $table->tinyInteger('deshabilitado')->default(0);
             $table->foreignId('id_categoria')->unsigned()->constrained('categorias', 'id_categoria');
             $table->foreignId('id_etiqueta')->unsigned()->constrained('etiquetas', 'id_etiqueta');

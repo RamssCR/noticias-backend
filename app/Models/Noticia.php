@@ -16,8 +16,12 @@ class Noticia extends Model
     protected $fillable = [
         'titulo',
         'descripcion',
+        'introduccion',
         'contenido',
+        'nudo',
+        'desenlace',
         'autor',
+        'referencia',
         'fecha_publicacion',
         'estatus',
         'deshabilitado',
@@ -25,5 +29,8 @@ class Noticia extends Model
         'id_etiqueta',
         'id_usuario',
         'multimedia',
+        'multimedia_introduccion',
+        'multimedia_nudo',
+        'multimedia_desenlace'
     ];
 }
